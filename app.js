@@ -74,8 +74,6 @@ function updateProgressUI() {
   const complete = allProgressKeys.filter((key) => progress[key]).length;
   const percent = Math.round((complete / allProgressKeys.length) * 100);
   document.getElementById("header-progress").textContent = `${percent}%`;
-  document.getElementById("welcome-score").textContent = `${complete} / ${allProgressKeys.length}`;
-  document.getElementById("welcome-progress-bar").style.width = `${percent}%`;
   document.getElementById("progress-ring-value").style.strokeDashoffset = `${106.8 - (106.8 * percent) / 100}`;
   document.querySelectorAll("[data-progress-key]").forEach((input) => {
     input.checked = Boolean(progress[input.dataset.progressKey]);
