@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Gen Academy onboarding hub for new team members." />
+    <meta name="theme-color" content="#000000" />
+    <title>The Gen Academy | Onboarding</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-view-target="welcome" aria-label="The Gen Academy onboarding home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-rule" aria-hidden="true"></span>
+          <span class="brand-name">The Gen Academy</span>
+        </button>
+
+        <div class="topbar-meta">
+          <span class="cohort-pill">Team onboarding</span>
+          <div class="overall-progress" aria-label="Overall onboarding progress">
+            <span class="progress-copy"><strong id="header-progress">0%</strong><small>complete</small></span>
+            <svg class="progress-ring" width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+              <circle cx="21" cy="21" r="17"></circle>
+              <circle id="progress-ring-value" cx="21" cy="21" r="17"></circle>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <nav class="mobile-tabs" aria-label="Onboarding sections">
+        <button class="mobile-tab is-active" type="button" data-view-target="welcome">Welcome</button>
+        <button class="mobile-tab" type="button" data-view-target="interviews">Practice</button>
+        <button class="mobile-tab" type="button" data-view-target="marketing">Marketing</button>
+      </nav>
+
+      <div class="workspace">
+        <aside class="sidebar">
+          <div class="sidebar-intro">
+            <span class="section-kicker">Your field guide</span>
+            <p>Everything you need to find your footing and start building.</p>
+          </div>
+
+          <nav class="chapter-nav" aria-label="Onboarding chapters">
+            <button class="chapter-link is-active" type="button" data-view-target="welcome">
+              <span class="chapter-number">01</span>
+              <span><strong>Welcome</strong><small>Set up and settle in</small></span>
+            </button>
+            <button class="chapter-link" type="button" data-view-target="interviews">
+              <span class="chapter-number">03</span>
+              <span><strong>Agent build practice</strong><small>Architecture and build</small></span>
+            </button>
+            <button class="chapter-link" type="button" data-view-target="marketing">
+              <span class="chapter-number">04</span>
+              <span><strong>Marketing</strong><small>Reserved for iteration</small></span>
+            </button>
+          </nav>
+
+        </aside>
+
+        <main id="main-content" tabindex="-1">
+          <section class="view is-active" id="welcome-view" data-view="welcome" aria-labelledby="welcome-title">
+            <div class="welcome-hero">
+              <div class="hero-grid" aria-hidden="true"></div>
+              <div class="hero-copy">
+                <span class="eyebrow dark">TGA onboarding / Day zero</span>
+                <h1 id="welcome-title">Welcome to the<br /><span>builder’s</span><br /><span>table.</span></h1>
+                <p>Learn the system. Meet the team. Build something useful.</p>
+                <div class="hero-actions">
+                  <button class="button button-dark" type="button" data-scroll-to="first-steps">Start onboarding <span aria-hidden="true">↘</span></button>
+                </div>
+              </div>
+
+              <aside class="hero-progress-card" aria-labelledby="first-48-title">
+                <span class="card-label">Your first 48 hours</span>
+                <div class="score-line"><strong id="welcome-score">0 / 4</strong><span>steps complete</span></div>
+                <div class="progress-track"><span id="welcome-progress-bar"></span></div>
+                <h2 id="first-48-title">Four essentials.</h2>
+                <p>Finish these before the next meet.</p>
+              </aside>
+            </div>
+
+            <div class="content-section" id="first-steps">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow">Start here</span>
+                  <h2>Before the next meet</h2>
+                </div>
+              </div>
+
+              <div class="setup-grid">
+                <label class="setup-item">
+                  <input type="checkbox" data-progress-key="slack" />
+                  <span class="custom-check" aria-hidden="true"></span>
+                  <span class="setup-number">01</span>
+                  <span class="setup-copy"><strong>Open Slack</strong><small>Use it for team communication.</small></span>
+                </label>
+                <label class="setup-item">
+                  <input type="checkbox" data-progress-key="calendar" />
+                  <span class="custom-check" aria-hidden="true"></span>
+                  <span class="setup-number">02</span>
+                  <span class="setup-copy"><strong>Check the calendar</strong><small>Find upcoming TGA meets.</small></span>
+                </label>
+                <label class="setup-item">
+                  <input type="checkbox" data-progress-key="tools" />
+                  <span class="custom-check" aria-hidden="true"></span>
+                  <span class="setup-number">03</span>
+                  <span class="setup-copy"><strong>Confirm tool access</strong><small>Claude Pro, Codex, Loom, and ChatGPT API.</small></span>
+                </label>
+                <label class="setup-item playful">
+                  <input type="checkbox" data-progress-key="fact" />
+                  <span class="custom-check" aria-hidden="true"></span>
+                  <span class="setup-number">04</span>
+                  <span class="setup-copy"><strong>Bring one embarrassing fact</strong><small>Share it at the next meet.</small></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="content-section first-week-section">
+              <div class="section-heading first-week-heading">
+                <div>
+                  <span class="eyebrow">First week</span>
+                  <h2>Ship one small contribution.</h2>
+                </div>
+                <p>By the end of your first week, you should understand the TGA ecosystem, have all required access, and complete one small contribution that the team can review.</p>
+              </div>
+
+              <div class="first-week-grid">
+                <a class="first-week-card first-week-link-card" href="https://maven.com/aishwarya-srinivasan/mastering-ai-agents/1/home" target="_blank" rel="noreferrer">
+                  <span class="card-label">Course</span>
+                  <h3>Watch all of the videos.</h3>
+                  <p>Complete the full Mastering Agentic AI course on Maven.</p>
+                  <span class="first-week-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <article class="first-week-card">
+                  <span class="card-label">Your project</span>
+                  <h3>Complete one practice project.</h3>
+                  <p>Choose one from the existing Practice list. If you do not choose, Arvind will assign one from that list.</p>
+                  <button class="simple-link" type="button" data-view-target="interviews">View projects <span aria-hidden="true">↗</span></button>
+                </article>
+
+                <article class="first-week-card owners-card">
+                  <span class="card-label">Who owns what</span>
+                  <div class="owner-list">
+                    <div><strong>Course content</strong><span>Owner placeholder</span></div>
+                    <div><strong>Technical work</strong><span>Owner placeholder</span></div>
+                    <div><strong>Marketing</strong><span>Owner placeholder</span></div>
+                    <div><strong>Access issues</strong><span>Owner placeholder</span></div>
+                  </div>
+                </article>
+
+                <article class="first-week-card security-card">
+                  <span class="card-label">Security basics</span>
+                  <h3>Keep private information private.</h3>
+                  <p>Never share API keys, credentials, private learner data, or internal materials publicly.</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="content-section resources-section">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow maven-highlight">Learning hub</span>
+                  <h2>Maven</h2>
+                </div>
+                <p>A cohort is a group learning live on the same schedule.</p>
+              </div>
+
+              <div class="resource-grid">
+                <a class="resource-card featured" href="https://maven.com/search?query=The%20Gen%20Academy" target="_blank" rel="noreferrer">
+                  <span class="resource-index">01 / Cohorts</span>
+                  <h3>Future cohorts</h3>
+                  <p>Programs led by Aishwarya and Arvind.</p>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="resource-card" href="https://maven.com/search?query=The+Gen+Academy&amp;tab=workshops" target="_blank" rel="noreferrer">
+                  <span class="resource-index">02 / Workshops</span>
+                  <h3>Hands-on workshops</h3>
+                  <p>Upcoming hands-on sessions.</p>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="resource-card" href="https://maven.com/search?query=aishwariya+srinivasan&amp;tab=free-lessons" target="_blank" rel="noreferrer">
+                  <span class="resource-index">03 / Free</span>
+                  <h3>Lightning lessons</h3>
+                  <p>Free lessons for the audience.</p>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="resource-card navy" href="https://docs.google.com/spreadsheets/d/1LD5Xmz0zYPwIHkIdxEOfNZzCLKMH2phIGj0oyEv29ys/edit?gid=0#gid=0" target="_blank" rel="noreferrer">
+                  <span class="resource-index">04 / Source of truth</span>
+                  <h3>Course master tracker</h3>
+                  <p>All course materials in one place.</p>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+          </section>
+
+          <section class="view" id="course-view" data-view="course" aria-labelledby="course-title" hidden>
+            <div class="page-hero dark-hero">
+              <div>
+                <span class="eyebrow light">Course field guide</span>
+                <h1 id="course-title">Mastering<br /><span>Agentic AI.</span></h1>
+              </div>
+              <div class="page-hero-aside">
+                <p>Six focused stages, from language-model fundamentals to secure production systems.</p>
+                <a class="button button-yellow" href="https://maven.com/aishwarya-srinivasan/mastering-ai-agents/1/home" target="_blank" rel="noreferrer">Open course home <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+
+            <div class="course-intro content-section compact-section">
+              <div><span class="eyebrow">The progression</span><h2>Learn the system, not just the prompt.</h2></div>
+              <p>Each week adds one layer of control. Move from model behavior to grounding, orchestration, adaptation, evaluation, and safety.</p>
+            </div>
+
+            <div class="week-list" id="week-list">
+              <article class="week-card is-open">
+                <button class="week-summary" type="button" aria-expanded="true">
+                  <span class="week-number">01</span><span class="week-title"><small>Foundation</small><strong>Gen AI building blocks</strong></span><span class="week-toggle" aria-hidden="true">−</span>
+                </button>
+                <div class="week-content">
+                  <p>Understand how LLMs work: tokens, prompting, context windows, function calling, and structured outputs. Map the modern AI stack across model providers, tools, platforms, agent skills, and vibe coding.</p>
+                  <ul><li>Latency budgets and cost controls</li><li>Reliability basics</li><li>Model and tool selection</li></ul>
+                </div>
+              </article>
+              <article class="week-card">
+                <button class="week-summary" type="button" aria-expanded="false">
+                  <span class="week-number">02</span><span class="week-title"><small>Grounding</small><strong>RAG and context engineering</strong></span><span class="week-toggle" aria-hidden="true">+</span>
+                </button>
+                <div class="week-content" hidden>
+                  <p>Go beyond simple prompts. Ground model behavior in source material using RAG, vector databases, chunking, embeddings, retrieval strategies, and advanced context patterns.</p>
+                  <ul><li>Chunking and embeddings</li><li>Retrieval strategies</li><li>Advanced RAG patterns</li></ul>
+                </div>
+              </article>
+              <article class="week-card">
+                <button class="week-summary" type="button" aria-expanded="false">
+                  <span class="week-number">03</span><span class="week-title"><small>Orchestration</small><strong>The agentic leap</strong></span><span class="week-toggle" aria-hidden="true">+</span>
+                </button>
+                <div class="week-content" hidden>
+                  <p>Learn what makes a system agentic, choose architecture patterns intentionally, connect through MCP and A2A, and orchestrate stateful flows with LangChain and LangGraph.</p>
+                  <ul><li>Agent architecture patterns</li><li>MCP and agent-to-agent</li><li>LangChain and LangGraph</li></ul>
+                </div>
+              </article>
+              <article class="week-card">
+                <button class="week-summary" type="button" aria-expanded="false">
+                  <span class="week-number">04</span><span class="week-title"><small>Adaptation</small><strong>Fine-tuning and local models</strong></span><span class="week-toggle" aria-hidden="true">+</span>
+                </button>
+                <div class="week-content" hidden>
+                  <p>Know when fine-tuning pays off and when it does not. Work with parameter-efficient methods such as LoRA and QLoRA, then run models locally with Ollama.</p>
+                  <ul><li>Fine-tuning decisions</li><li>LoRA and QLoRA</li><li>Local inference with Ollama</li></ul>
+                </div>
+              </article>
+              <article class="week-card">
+                <button class="week-summary" type="button" aria-expanded="false">
+                  <span class="week-number">05</span><span class="week-title"><small>Reliability</small><strong>Evals, observability, and monitoring</strong></span><span class="week-toggle" aria-hidden="true">+</span>
+                </button>
+                <div class="week-content" hidden>
+                  <p>Replace vague confidence with measured performance. Build golden datasets, analyze failures, use LLM-as-a-judge carefully, and create eval loops that catch regressions.</p>
+                  <ul><li>Golden datasets</li><li>Failure analysis</li><li>Production-ready eval loops</li></ul>
+                </div>
+              </article>
+              <article class="week-card">
+                <button class="week-summary" type="button" aria-expanded="false">
+                  <span class="week-number">06</span><span class="week-title"><small>Trust</small><strong>AI security and safety</strong></span><span class="week-toggle" aria-hidden="true">+</span>
+                </button>
+                <div class="week-content" hidden>
+                  <p>Understand the AI threat surface. Defend against hallucinations, prompt injection, and unsafe data handling with guardrails, policy controls, runtime checks, and red teaming.</p>
+                  <ul><li>PII and data privacy</li><li>Guardrails and policy controls</li><li>Governance and production readiness</li></ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="course-footer-cta">
+              <div><span class="eyebrow dark">Keep nearby</span><h2>The master tracker is your working index.</h2></div>
+              <a class="button button-dark" href="https://docs.google.com/spreadsheets/d/1LD5Xmz0zYPwIHkIdxEOfNZzCLKMH2phIGj0oyEv29ys/edit?gid=0#gid=0" target="_blank" rel="noreferrer">Open master tracker <span aria-hidden="true">↗</span></a>
+            </div>
+          </section>
+
+          <section class="view" id="interviews-view" data-view="interviews" aria-labelledby="interviews-title" hidden>
+            <div class="page-hero project-hero">
+              <div>
+                <span class="eyebrow dark">Week 3 project practice</span>
+                <h1 id="interviews-title">Architect it.<br /><span>Build it. Show it.</span></h1>
+              </div>
+              <div class="project-hero-note">
+                <span>Week 3</span>
+                <p>Build an agentic system that makes decisions, calls tools, holds state, recovers from errors, and hands off to a human at the right moment.</p>
+              </div>
+            </div>
+
+            <div class="content-section project-picker-section">
+              <div class="section-heading">
+                <div><span class="eyebrow">Choose one project</span><h2>Four real systems to build</h2></div>
+              </div>
+              <div class="project-tabs" id="project-tabs" role="tablist" aria-label="Week 3 project options"></div>
+            </div>
+
+            <div class="project-detail" id="project-detail" role="tabpanel" aria-live="polite"></div>
+
+            <div class="content-section rubric-section">
+              <div class="section-heading">
+                <div><span class="eyebrow">Build checklist</span><h2>Checklist to look after</h2><small class="section-helper">We need to work on this.</small></div>
+              </div>
+
+              <div class="rubric-table" role="table" aria-label="Week 3 evaluation rubric">
+                <div class="rubric-row rubric-header" role="row"><span role="columnheader">Checklist</span><span role="columnheader">Weight</span><span role="columnheader">What to look after</span></div>
+                <div class="rubric-row" role="row"><strong role="cell">Scope depth</strong><span class="weight" role="cell">10%</span><p role="cell">A sharp one-liner, a real user with quantified pain, specified state and control flow, intentional HITL, and anticipated failure modes.</p></div>
+                <div class="rubric-row emphasis" role="row"><strong role="cell">Agent architecture and control flow</strong><span class="weight" role="cell">25%</span><p role="cell">A clear architecture diagram, justified pattern choice, explicit state strategy, intentional HITL points, and a tight tool list.</p></div>
+                <div class="rubric-row emphasis" role="row"><strong role="cell">Implementation and demo</strong><span class="weight" role="cell">25%</span><p role="cell">The agent runs end to end. Code is organized and reproducible. The Loom shows happy path, failure recovery, and a human intervention.</p></div>
+                <div class="rubric-row" role="row"><strong role="cell">Evaluation rigor</strong><span class="weight" role="cell">20%</span><p role="cell">Real scenarios are run, task completion is measured, failures are reported honestly, and next-fix hypotheses are specific.</p></div>
+                <div class="rubric-row" role="row"><strong role="cell">Documentation</strong><span class="weight" role="cell">10%</span><p role="cell">Scannable documentation and a well-paced Loom under five minutes. Design choices are explained, not merely listed.</p></div>
+                <div class="rubric-row" role="row"><strong role="cell">Out-of-the-box thinking</strong><span class="weight" role="cell">10%</span><p role="cell">A novel pattern, creative tool combination, thoughtful UX, unusual eval setup, or useful vibe-coded extension makes the build distinct.</p></div>
+              </div>
+            </div>
+
+            <div class="content-section demo-section">
+              <div class="demo-card">
+                <span class="eyebrow light">Record the proof</span>
+                <h2>Record and share your demo.</h2>
+                <p>Keep it under five minutes. Use Loom, or upload the recording to Google Drive and share the link.</p>
+                <a class="button button-yellow" href="https://forms.gle/YcbLn86XDGcQeHnj6" target="_blank" rel="noreferrer">Open submission form <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="deliverables-card">
+                <span class="eyebrow">Submit</span>
+                <h3>Documentation, video demo, and code base.</h3>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="marketing-view" data-view="marketing" aria-labelledby="marketing-title" hidden>
+            <div class="blank-workspace">
+              <div class="blank-index">04</div>
+              <span class="eyebrow">Reserved workspace</span>
+              <h1 id="marketing-title">Marketing,<br /><span>intentionally blank.</span></h1>
+              <p>This space is ready for the next iteration. No assumptions, no filler content, and no premature structure.</p>
+              <div class="blank-rule"><span></span></div>
+              <small>Direction pending / TGA team</small>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer class="site-footer">
+        <div><strong>The Gen Academy</strong><span>AI skills that advance careers.</span></div>
+        <div class="footer-links"><a href="https://thegenacademy.com" target="_blank" rel="noreferrer">Website</a><a href="https://www.linkedin.com/company/the-gen-academy" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://discord.gg/QD4RCM6Ht6" target="_blank" rel="noreferrer">Discord</a></div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

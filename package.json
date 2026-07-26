@@ -1,0 +1,10 @@
+{
+  "name": "tga-onboarding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Gen Academy team onboarding hub",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "check": "node --check app.js"
+  }
+}
