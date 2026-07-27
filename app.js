@@ -98,7 +98,7 @@ const projects = [
 ];
 
 const storageKey = "tga-onboarding-progress";
-const allProgressKeys = ["slack", "github", "calendar", "tools", "fact"];
+const allProgressKeys = ["slack", "discord", "github", "calendar", "tools", "fact"];
 
 function getProgress() {
   try {

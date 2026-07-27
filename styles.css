@@ -109,6 +109,7 @@ main { min-width: 0; background: #f8f9fa; }
 .setup-copy strong, .setup-copy small { display: block; }
 .setup-copy strong { color: var(--navy); font-size: 16px; }
 .setup-copy small { max-width: 520px; margin-top: 3px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.setup-copy small a { color: var(--navy); font-weight: 700; text-underline-offset: 3px; }
 .setup-item.playful:has(input:checked) { background: var(--soft-yellow); }
 .first-week-section { background: #fbfaf7; }
 .first-week-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; }
