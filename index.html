@@ -33,7 +33,8 @@
 
       <nav class="mobile-tabs" aria-label="Onboarding sections">
         <button class="mobile-tab is-active" type="button" data-view-target="welcome">Welcome</button>
-        <button class="mobile-tab" type="button" data-view-target="interviews">Practice</button>
+        <button class="mobile-tab" type="button" data-view-target="week2">Week 2</button>
+        <button class="mobile-tab" type="button" data-view-target="interviews">Week 3</button>
         <button class="mobile-tab" type="button" data-view-target="marketing">Marketing</button>
       </nav>
 
@@ -48,6 +49,10 @@
             <button class="chapter-link is-active" type="button" data-view-target="welcome">
               <span class="chapter-number">01</span>
               <span><strong>Welcome</strong><small>Set up and settle in</small></span>
+            </button>
+            <button class="chapter-link" type="button" data-view-target="week2">
+              <span class="chapter-number">02</span>
+              <span><strong>RAG build practice</strong><small>Retrieval and evaluation</small></span>
             </button>
             <button class="chapter-link" type="button" data-view-target="interviews">
               <span class="chapter-number">03</span>
@@ -89,24 +94,30 @@
                   <input type="checkbox" data-progress-key="slack" />
                   <span class="custom-check" aria-hidden="true"></span>
                   <span class="setup-number">01</span>
-                  <span class="setup-copy"><strong>Open Slack</strong><small>Use it for team communication.</small></span>
+                  <span class="setup-copy"><strong>Join Slack</strong><small>Use it for team communication.</small></span>
+                </label>
+                <label class="setup-item">
+                  <input type="checkbox" data-progress-key="github" />
+                  <span class="custom-check" aria-hidden="true"></span>
+                  <span class="setup-number">02</span>
+                  <span class="setup-copy"><strong>Set up GitHub</strong><small>Create your account with your TGA email ID.</small></span>
                 </label>
                 <label class="setup-item">
                   <input type="checkbox" data-progress-key="calendar" />
                   <span class="custom-check" aria-hidden="true"></span>
-                  <span class="setup-number">02</span>
+                  <span class="setup-number">03</span>
                   <span class="setup-copy"><strong>Check the calendar</strong><small>Find upcoming TGA meets.</small></span>
                 </label>
                 <label class="setup-item">
                   <input type="checkbox" data-progress-key="tools" />
                   <span class="custom-check" aria-hidden="true"></span>
-                  <span class="setup-number">03</span>
-                  <span class="setup-copy"><strong>Confirm tool access</strong><small>Claude Pro, Codex, Loom, and ChatGPT API.</small></span>
+                  <span class="setup-number">04</span>
+                  <span class="setup-copy"><strong>Confirm tool access</strong><small>Check every tool listed below.</small></span>
                 </label>
                 <label class="setup-item playful">
                   <input type="checkbox" data-progress-key="fact" />
                   <span class="custom-check" aria-hidden="true"></span>
-                  <span class="setup-number">04</span>
+                  <span class="setup-number">05</span>
                   <span class="setup-copy"><strong>Bring one embarrassing fact</strong><small>Share it at the next meet.</small></span>
                 </label>
               </div>
@@ -116,7 +127,8 @@
               <div class="section-heading first-week-heading">
                 <div>
                   <span class="eyebrow">First week</span>
-                  <h2>Get set. Build one thing.</h2>
+                  <h2>Learn. Build two projects.</h2>
+                  <small class="section-helper">Complete both projects within your first week of joining.</small>
                 </div>
               </div>
 
@@ -128,10 +140,22 @@
                 </a>
 
                 <article class="first-week-card">
-                  <span class="card-label">Your project</span>
-                  <h3>Complete one project.</h3>
-                  <p>Choose one, or Arvind will assign one.</p>
-                  <button class="simple-link" type="button" data-view-target="interviews">View projects <span aria-hidden="true">↗</span></button>
+                  <span class="card-label">Week 2</span>
+                  <h3>Complete one RAG project.</h3>
+                  <button class="simple-link" type="button" data-view-target="week2">View Week 2 <span aria-hidden="true">↗</span></button>
+                </article>
+
+                <article class="first-week-card">
+                  <span class="card-label">Week 3</span>
+                  <h3>Complete one agent project.</h3>
+                  <p>Choose one, or Arvind will assign one from the list.</p>
+                  <button class="simple-link" type="button" data-view-target="interviews">View Week 3 <span aria-hidden="true">↗</span></button>
+                </article>
+
+                <article class="first-week-card submit-card">
+                  <span class="card-label">Submit</span>
+                  <h3>Send both to Arvind.</h3>
+                  <p>Submit the projects directly to Arvind on Slack.</p>
                 </article>
 
                 <article class="first-week-card owners-card">
@@ -140,7 +164,8 @@
                     <div><strong>Course content</strong><span>Owner placeholder</span></div>
                     <div><strong>Technical work</strong><span>Owner placeholder</span></div>
                     <div><strong>Marketing</strong><span>Owner placeholder</span></div>
-                    <div><strong>Access issues</strong><span>Owner placeholder</span></div>
+                    <div><strong>Access issues</strong><span>Arvind</span></div>
+                    <div><strong>Intern concerns</strong><a href="https://thegenacademygroup.slack.com/team/U0B1ZEUK6JK" target="_blank" rel="noreferrer">@Vidhyakshaya Kannan ↗</a></div>
                   </div>
                 </article>
 
@@ -149,6 +174,40 @@
                   <h3>Keep it private.</h3>
                   <p>Never share keys, credentials, learner data, or internal materials.</p>
                 </article>
+              </div>
+            </div>
+
+            <div class="content-section access-section">
+              <div class="section-heading">
+                <div><span class="eyebrow">Access checklist</span><h2>Your toolkit</h2></div>
+                <p>Confirm access to everything below. Contact Arvind on Slack if anything is missing.</p>
+              </div>
+              <div class="tool-list" aria-label="Required tool access">
+                <span>Slack</span><span>TGA email</span><span>Google Calendar</span><span>Google Drive</span>
+                <span>GitHub</span><span>Maven</span><span>Notion</span><span>Claude Pro</span>
+                <span>Codex</span><span>ChatGPT API</span><span>Replit</span><span>Loom</span>
+                <span>n8n</span><span>Nebius Token Factory</span><span>LangSmith</span><span>LangChain + LangGraph</span>
+              </div>
+            </div>
+
+            <div class="content-section assets-section">
+              <div class="section-heading">
+                <div><span class="eyebrow">Key assets</span><h2>Keep these close</h2></div>
+                <p>Course resources and active work live here.</p>
+              </div>
+              <div class="resource-grid two-up">
+                <a class="resource-card navy" href="https://docs.google.com/spreadsheets/d/1LD5Xmz0zYPwIHkIdxEOfNZzCLKMH2phIGj0oyEv29ys/edit?gid=0#gid=0" target="_blank" rel="noreferrer">
+                  <span class="resource-index">01 / Course</span>
+                  <h3>Master tracker</h3>
+                  <p>Materials, links, and course resources.</p>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="resource-card featured" href="https://app.notion.com/p/Projects-Tasks-9e4ba51cb37e8260af6201f917db73a9" target="_blank" rel="noreferrer">
+                  <span class="resource-index">02 / Work</span>
+                  <h3>Projects Tasks</h3>
+                  <p>Current work and project tracking in Notion.</p>
+                  <span class="resource-arrow" aria-hidden="true">↗</span>
+                </a>
               </div>
             </div>
 
@@ -178,12 +237,6 @@
                   <span class="resource-index">03 / Free</span>
                   <h3>Lightning lessons</h3>
                   <p>Free lessons for the audience.</p>
-                  <span class="resource-arrow" aria-hidden="true">↗</span>
-                </a>
-                <a class="resource-card navy" href="https://docs.google.com/spreadsheets/d/1LD5Xmz0zYPwIHkIdxEOfNZzCLKMH2phIGj0oyEv29ys/edit?gid=0#gid=0" target="_blank" rel="noreferrer">
-                  <span class="resource-index">04 / Source of truth</span>
-                  <h3>Course master tracker</h3>
-                  <p>All course materials in one place.</p>
                   <span class="resource-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -271,6 +324,57 @@
             </div>
           </section>
 
+          <section class="view" id="week2-view" data-view="week2" aria-labelledby="week2-title" hidden>
+            <div class="page-hero project-hero rag-hero">
+              <div>
+                <span class="eyebrow dark">Week 2 RAG practice</span>
+                <h1 id="week2-title">Ground it.<br /><span>Retrieve it. Prove it.</span></h1>
+              </div>
+            </div>
+
+            <div class="content-section project-picker-section">
+              <div class="week3-note">
+                <span>Week 2</span>
+                <p>Build a RAG application: pick a corpus, chunk it, embed it, store it, retrieve from it, and generate cited answers.</p>
+              </div>
+              <div class="section-heading">
+                <div><span class="eyebrow">Choose one project</span><h2>Four RAG systems to build</h2></div>
+              </div>
+              <div class="project-tabs" id="week2-project-tabs" role="tablist" aria-label="Week 2 project options"></div>
+            </div>
+
+            <div class="project-detail" id="week2-project-detail" role="tabpanel" aria-live="polite"></div>
+
+            <div class="content-section rubric-section">
+              <div class="section-heading">
+                <div><span class="eyebrow">Week 2 evaluation</span><h2>Checklist to look after</h2><small class="section-helper">We need to work on this.</small></div>
+              </div>
+
+              <div class="rubric-table" role="table" aria-label="Week 2 evaluation rubric">
+                <div class="rubric-row rubric-header" role="row"><span role="columnheader">Checklist</span><span role="columnheader">Weight</span><span role="columnheader">What excellent looks like</span></div>
+                <div class="rubric-row" role="row"><strong role="cell">Scope Depth</strong><span class="weight" role="cell">10%</span><p role="cell">Sharp one-liner. Real user with quantified pain today. Knowledge corpus named specifically. Success metric is measurable (not just “works well”).</p></div>
+                <div class="rubric-row emphasis" role="row"><strong role="cell">RAG architecture &amp; retrieval design</strong><span class="weight" role="cell">25%</span><p role="cell">Architecture diagram is clear. Chunking, embedding, and retrieval choices are justified for the corpus. Hybrid vs dense vs sparse trade-off is explicit. “I don’t know” path is designed, not hand-waved.</p></div>
+                <div class="rubric-row emphasis" role="row"><strong role="cell">Implementation &amp; demo</strong><span class="weight" role="cell">25%</span><p role="cell">Prototype runs end-to-end on the use case. Code or n8n workflow is organized and reproducible. Citations are rendered. Loom shows happy path and at least one edge case live.</p></div>
+                <div class="rubric-row" role="row"><strong role="cell">Evaluation rigor</strong><span class="weight" role="cell">20%</span><p role="cell">Real Q&amp;A test set exists and runs. Faithfulness and retrieval precision measured with numbers. Failures reported honestly, with a hypothesis on why and what you would fix next.</p></div>
+                <div class="rubric-row" role="row"><strong role="cell">Communication &amp; clarity</strong><span class="weight" role="cell">10%</span><p role="cell">Documentation is scannable. Loom is well-paced and under 5 minutes. Design choices (chunking, embedding model, retrieval strategy) are explained, not just listed.</p></div>
+                <div class="rubric-row" role="row"><strong role="cell">Out-of-the-box thinking</strong><span class="weight" role="cell">10%</span><p role="cell">Bonus for going beyond the brief: a novel retrieval trick, a custom re-ranker, a clever UX touch, a creative eval setup, or an unusual corpus. Show us what makes your build different.</p></div>
+              </div>
+            </div>
+
+            <div class="content-section demo-section">
+              <div class="demo-card">
+                <span class="eyebrow light">Submit on Slack</span>
+                <h2>Send your project to Arvind.</h2>
+                <p>Share your documentation, demo recording, and GitHub link directly with Arvind on Slack.</p>
+              </div>
+              <div class="deliverables-card">
+                <span class="eyebrow">Demo</span>
+                <h3>Keep it under five minutes.</h3>
+                <p>If Loom is unavailable, upload the recording to Google Drive and share the link.</p>
+              </div>
+            </div>
+          </section>
+
           <section class="view" id="interviews-view" data-view="interviews" aria-labelledby="interviews-title" hidden>
             <div class="page-hero project-hero">
               <div>
@@ -310,14 +414,14 @@
 
             <div class="content-section demo-section">
               <div class="demo-card">
-                <span class="eyebrow light">Record the proof</span>
-                <h2>Record and share your demo.</h2>
-                <p>Keep it under five minutes. Use Loom, or upload the recording to Google Drive and share the link.</p>
-                <a class="button button-yellow" href="https://forms.gle/YcbLn86XDGcQeHnj6" target="_blank" rel="noreferrer">Open submission form <span aria-hidden="true">↗</span></a>
+                <span class="eyebrow light">Submit on Slack</span>
+                <h2>Send your project to Arvind.</h2>
+                <p>Share your documentation, demo recording, and GitHub link directly with Arvind on Slack.</p>
               </div>
               <div class="deliverables-card">
-                <span class="eyebrow">Submit</span>
-                <h3>Documentation, video demo, and code base.</h3>
+                <span class="eyebrow">Demo</span>
+                <h3>Keep it under five minutes.</h3>
+                <p>If Loom is unavailable, upload the recording to Google Drive and share the link.</p>
               </div>
             </div>
           </section>

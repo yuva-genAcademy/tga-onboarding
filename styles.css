@@ -116,9 +116,17 @@ main { min-width: 0; background: var(--off-white); }
 .owner-list { margin-top: 30px; }
 .owner-list div { display: flex; justify-content: space-between; gap: 18px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 12px; }
 .owner-list span { color: #888; }
+.owner-list a { color: var(--black); font-weight: 700; text-align: right; text-underline-offset: 3px; }
+.submit-card { background: var(--yellow); }
 .security-card { background: var(--navy); color: var(--white); }
 .security-card .card-label { color: #aeb8cb; }
 .security-card p { color: #c2c9d5; }
+.access-section { background: var(--black); color: var(--white); }
+.access-section .eyebrow, .access-section .section-heading > p { color: #aaa; }
+.tool-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.tool-list span { padding: 11px 15px; border: 1px solid #505050; border-radius: 999px; background: #171717; font-size: 13px; font-weight: 700; }
+.assets-section { background: var(--white); }
+.resource-grid.two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .resources-section { background: #e9e9e9; }
 .maven-highlight { width: fit-content; padding: 8px 11px 7px; background: var(--yellow); color: var(--black); border: 1px solid var(--black); }
 .resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
@@ -164,6 +172,7 @@ main { min-width: 0; background: var(--off-white); }
 
 .project-hero { min-height: 380px; grid-template-columns: 1fr; background: var(--yellow); }
 .project-hero h1 span { display: inline-block; background: var(--black); color: var(--white); padding: 2px 10px 7px; border-radius: 12px; }
+.rag-hero { background: var(--soft-yellow); }
 .week3-note { margin-bottom: 48px; padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 20px; }
 .week3-note span { padding-top: 3px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
 .week3-note p { max-width: 760px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
@@ -254,6 +263,7 @@ main { min-width: 0; background: var(--off-white); }
   .content-section { padding: 65px 22px; }
   .section-heading, .course-intro, .demo-section { grid-template-columns: 1fr; gap: 27px; }
   .setup-grid, .resource-grid { grid-template-columns: 1fr; }
+  .resource-grid.two-up { grid-template-columns: 1fr; }
   .first-week-grid { grid-template-columns: 1fr; }
   .setup-item:nth-child(odd) { border-right: 1px solid var(--line); }
   .week-list { padding-left: 22px; padding-right: 22px; }

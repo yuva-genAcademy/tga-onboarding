@@ -1,3 +1,46 @@
+const week2Projects = [
+  {
+    id: "1",
+    short: "Enterprise Policy Q&A",
+    title: "Enterprise Policy Q&A Bot",
+    description: "Build a RAG-powered Q&A system over real enterprise documents — HR policies, compliance manuals, product documentation, or onboarding guides. Use a no-code/low-code tool or a guided RAG starter (e.g., Pinecone + LangChain template) to ingest your documents, chunk and embed them, and stand up a question-answering interface. Then stress-test it with 15 questions including edge cases: ambiguous queries, questions that span multiple documents, and questions the knowledge base simply can’t answer. Document where retrieval succeeds, where it fails, and why.",
+    bestFor: "All profiles — PMs use product docs, finance analysts use regulatory filings, consultants use client knowledge bases, engineers use technical documentation. Everyone has documents they wish they could query.",
+    deliverable: "Working Q&A bot + a 15-question evaluation report with retrieval quality scores and failure analysis.",
+    submission: "Demo recording + GitHub link or zip file + evaluation report document.",
+    difficulty: "Beginner to Intermediate | No-code option available | Engineers extend with custom embeddings and reranking"
+  },
+  {
+    id: "2",
+    short: "Financial Documents",
+    title: "Financial Document Intelligence Pipeline",
+    description: "Build a RAG pipeline that answers questions across financial documents — SEC filings, earnings call transcripts, insurance claims, or loan documents. Implement two chunking strategies (fixed-size vs. semantic chunking) and compare retrieval quality on the same set of queries. Add a reranking step and measure the improvement. This project is particularly relevant for anyone working in financial services, insurance, or regulated industries, but the techniques apply to any domain with dense, structured documents.",
+    bestFor: "Data Scientists/Analysts (financial analysis), Finance roles (Wells Fargo, JPMC, Citi, Morgan Stanley, NYLife), Architects (pipeline design), Consultants (client financial analysis).",
+    deliverable: "A working financial RAG pipeline with a chunking strategy comparison report and reranking impact analysis.",
+    submission: "Demo recording + GitHub link or zip file + comparison report document.",
+    difficulty: "Intermediate | Code-assisted | PMs can define test questions and evaluate business relevance of retrieved answers"
+  },
+  {
+    id: "3",
+    short: "GraphRAG",
+    title: "GraphRAG for Organizational Knowledge",
+    description: "Model your team’s or organization’s knowledge as a graph — people, projects, skills, documents, and decisions — and use GraphRAG to enable queries that traditional vector search can’t handle well. Think: “Who worked on the last compliance audit and what tools did they use?” or “What decisions were made about our pricing model and who approved them?” Build the graph with 20+ nodes, run queries against it, and compare GraphRAG results with traditional vector-based RAG on the same questions. This project highlights when structured relationships matter more than semantic similarity.",
+    bestFor: "Program/Project Managers (organizational knowledge), Executives (decision tracking), Consultants (client engagement knowledge), Tech Leads (technical decision logs), Strategy roles.",
+    deliverable: "A knowledge graph with 20+ nodes + GraphRAG vs. vector RAG comparison on 10 queries + analysis of when each approach wins.",
+    submission: "Demo recording + GitHub link or zip file + comparison analysis document.",
+    difficulty: "Advanced | Code required | PMs/Managers can design the graph schema and evaluate results"
+  },
+  {
+    id: "4",
+    short: "Customer Support KB",
+    title: "Customer Support Knowledge Base with Hybrid Search",
+    description: "Build a customer support bot that combines keyword search and semantic search (hybrid retrieval) over support tickets, FAQs, and product manuals. Implement a confidence-based fallback: when the system isn’t sure of an answer, it escalates to a human rather than hallucinating. Test with 20 real-world-style support queries and measure first-contact resolution rate. Highly relevant for e-commerce, SaaS, and consumer-facing companies where bad AI answers directly cost customer trust.",
+    bestFor: "Product Managers (customer experience), Software Engineers (implementation), Founders (MVP for their product), QA Engineers (testing edge cases), Commerce/Retail roles.",
+    deliverable: "Working support bot with hybrid search + escalation logic, tested against 20 queries with resolution metrics.",
+    submission: "Demo recording + GitHub link or zip file + evaluation metrics document.",
+    difficulty: "Intermediate | Low-code option with guided templates | Engineers add custom reranking"
+  }
+];
+
 const projects = [
   {
     id: "A",
@@ -55,7 +98,7 @@ const projects = [
 ];
 
 const storageKey = "tga-onboarding-progress";
-const allProgressKeys = ["slack", "calendar", "tools", "fact"];
+const allProgressKeys = ["slack", "github", "calendar", "tools", "fact"];
 
 function getProgress() {
   try {
@@ -99,32 +142,32 @@ function showView(viewName, updateHash = true) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function renderProjects() {
-  const tabs = document.getElementById("project-tabs");
-  tabs.innerHTML = projects.map((project, index) => `
+function renderProjectCollection(items, tabsId, detailId, labelFor, showSolutions = false) {
+  const tabs = document.getElementById(tabsId);
+  tabs.innerHTML = items.map((project, index) => `
     <button class="project-tab${index === 0 ? " is-active" : ""}" type="button" role="tab" aria-selected="${index === 0}" data-project-id="${project.id}">
-      <span>Project 3${project.id}</span><strong>${project.short}</strong>
+      <span>${labelFor(project)}</span><strong>${project.short}</strong>
     </button>`).join("");
-  renderProjectDetail(projects[0]);
+  renderProjectDetail(items[0], detailId, labelFor(items[0]), showSolutions);
 
   tabs.addEventListener("click", (event) => {
     const button = event.target.closest("[data-project-id]");
     if (!button) return;
-    const project = projects.find((item) => item.id === button.dataset.projectId);
+    const project = items.find((item) => item.id === button.dataset.projectId);
     tabs.querySelectorAll(".project-tab").forEach((tab) => {
       const active = tab === button;
       tab.classList.toggle("is-active", active);
       tab.setAttribute("aria-selected", String(active));
     });
-    renderProjectDetail(project);
+    renderProjectDetail(project, detailId, labelFor(project), showSolutions);
   });
 }
 
-function renderProjectDetail(project) {
-  const detail = document.getElementById("project-detail");
+function renderProjectDetail(project, detailId, projectLabel, showSolutions) {
+  const detail = document.getElementById(detailId);
   detail.innerHTML = `
     <div class="project-title-row">
-      <div><span class="eyebrow">Project 3${project.id}</span><h2>Project 3${project.id}: ${project.title}</h2></div>
+      <div><span class="eyebrow">${projectLabel}</span><h2>${projectLabel}: ${project.title}</h2></div>
     </div>
     <div class="project-copy">
       <section><span>Description</span><p>${project.description}</p></section>
@@ -133,7 +176,7 @@ function renderProjectDetail(project) {
       <section><span>Submission</span><p>${project.submission}</p></section>
       <section><span>Difficulty</span><p><em>${project.difficulty}</em></p></section>
     </div>
-    <div class="solution-reference">
+    ${showSolutions ? `<div class="solution-reference">
       <span>Definition of done</span>
       <h3>Code-track example</h3>
       <p>Use the solution only as a reference after attempting the project yourself.</p>
@@ -142,12 +185,13 @@ function renderProjectDetail(project) {
           ? project.solutions.map((solution) => `<a href="${solution.url}" target="_blank" rel="noreferrer">${solution.label} <span aria-hidden="true">↗</span></a>`).join("")
           : `<span class="solution-pending">Reference link placeholder</span>`}
       </div>
-    </div>`;
+    </div>` : ""}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   updateProgressUI();
-  renderProjects();
+  renderProjectCollection(week2Projects, "week2-project-tabs", "week2-project-detail", (project) => `Project ${project.id}`);
+  renderProjectCollection(projects, "project-tabs", "project-detail", (project) => `Project 3${project.id}`, true);
 
   document.querySelectorAll("[data-progress-key]").forEach((input) => {
     input.addEventListener("change", () => {
@@ -179,10 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const initialView = location.hash.replace("#", "");
-  if (["welcome", "course", "interviews", "marketing"].includes(initialView)) showView(initialView, false);
+  if (["welcome", "course", "week2", "interviews", "marketing"].includes(initialView)) showView(initialView, false);
 });
 
 window.addEventListener("hashchange", () => {
   const view = location.hash.replace("#", "");
-  if (["welcome", "course", "interviews", "marketing"].includes(view)) showView(view, false);
+  if (["welcome", "course", "week2", "interviews", "marketing"].includes(view)) showView(view, false);
 });
