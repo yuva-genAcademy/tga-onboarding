@@ -1,4 +1,4 @@
-const week2Projects = [
+const ragProjects = [
   {
     id: "1",
     short: "Enterprise Policy Q&A",
@@ -190,7 +190,7 @@ function renderProjectDetail(project, detailId, projectLabel, showSolutions) {
 
 document.addEventListener("DOMContentLoaded", () => {
   updateProgressUI();
-  renderProjectCollection(week2Projects, "week2-project-tabs", "week2-project-detail", (project) => `Project ${project.id}`);
+  renderProjectCollection(ragProjects, "rag-project-tabs", "rag-project-detail", (project) => `Project ${project.id}`);
   renderProjectCollection(projects, "project-tabs", "project-detail", (project) => `Project 3${project.id}`, true);
 
   document.querySelectorAll("[data-progress-key]").forEach((input) => {
@@ -223,10 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const initialView = location.hash.replace("#", "");
-  if (["welcome", "course", "week2", "interviews", "marketing"].includes(initialView)) showView(initialView, false);
+  if (["welcome", "course", "rag", "agents", "marketing"].includes(initialView)) showView(initialView, false);
 });
 
 window.addEventListener("hashchange", () => {
   const view = location.hash.replace("#", "");
-  if (["welcome", "course", "week2", "interviews", "marketing"].includes(view)) showView(view, false);
+  if (["welcome", "course", "rag", "agents", "marketing"].includes(view)) showView(view, false);
 });
